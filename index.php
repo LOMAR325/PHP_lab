@@ -95,6 +95,10 @@
             <span class="num">05</span>
             <span>Лабораторная работа № 5</span>
         </a>
+        <a href="labwork6/lab6.php" class="c">
+            <span class="num">06</span>
+            <span>Лабораторная работа № 6</span>
+        </a>
     </div>
     <div class="footer">
         Жолудь В.А.
