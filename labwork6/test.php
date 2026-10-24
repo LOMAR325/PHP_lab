@@ -1,18 +1,11 @@
 <?php
-echo "<pre>";
-$color = [
-    ["name" => "Vasia", "age" => 14]
-];
 
-print_r($color);
+$a = [4,2,8,12,9,1];
 
-$n = [1, 3, 4, 4, 6, 7];
+array_reverse($a);
 
-print_r(array_unique($n));
+sort($a);
 
-print_r(array_pad($n, 8, 0));
+$b = array_filter($a,fn($s) => $s%2 == 0);
 
-$random = fn() => substr(str_shuffle(str_repeat("qwertyuiopasdfghjklzxcvbnm",5)),0,rand(1,10));
-
-echo $random();
-
+print_r($b);
