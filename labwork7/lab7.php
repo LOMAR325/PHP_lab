@@ -125,7 +125,6 @@
     <?php
     echo "<pre>";
 
-    // кроме кратных 4
     echo "кроме кратных 4:          ";
     for ($i = 1; $i <= 30; $i++) {
         if ($i % 4 == 0) {
@@ -135,7 +134,6 @@
     }
     echo "\n";
 
-    // кроме нечётных
     echo "кроме нечётных:           ";
     for ($i = 1; $i <= 30; $i++) {
         if ($i % 2 != 0) {
@@ -145,10 +143,9 @@
     }
     echo "\n";
 
-    // кроме тех, чьи цифры в сумме дают 5
     echo "кроме суммы цифр = 5:     ";
     for ($i = 1; $i <= 30; $i++) {
-        $digitSum = intdiv($i, 10) + $i % 10;   // десятки + единицы
+        $digitSum = intdiv($i, 10) + $i % 10;  
         if ($digitSum == 5) {
             continue;
         }
@@ -156,7 +153,6 @@
     }
     echo "\n";
 
-    // пока сумма выведенных чисел не станет равна 42 (выводим только чётные — так сумма попадает ровно в 42)
     echo "пока сумма не равна 42:   ";
     $sum = 0;
     for ($i = 1; $i <= 30; $i++) {
@@ -171,7 +167,6 @@
     }
     echo " (сумма = $sum)\n";
 
-    // пока длина вывода не превысит 5 значений
     echo "не больше 5 значений:     ";
     $count = 0;
     $i = 1;
@@ -197,9 +192,9 @@
     echo "этажей: $floors\n\n";
 
     for ($floor = 1; $floor <= $floors; $floor++) {
-        $edge = $floors - $floor + 1;                  // сколько косых черт с каждой стороны
+        $edge = $floors - $floor + 1;                  
         echo str_repeat("/", $edge)
-            . str_repeat($floor, 2 * $floor - 1)       // нечётное число цифр: 1, 3, 5, ...
+            . str_repeat($floor, 2 * $floor - 1)      
             . str_repeat("\\", $edge)
             . "\n";
     }
@@ -265,12 +260,12 @@
     {
         $birth = new DateTimeImmutable($birthDate);
         $today = new DateTimeImmutable("today");
-        $age = $birth->diff($today)->y;                // полных лет
+        $age = $birth->diff($today)->y;                
 
         echo "дата рождения: $birthDate, полных лет: $age\n";
 
         if ($age < 18) {
-            $adultDay = $birth->modify("+18 years");   // день, когда исполнится 18
+            $adultDay = $birth->modify("+18 years");   
             $wait = $today->diff($adultDay);
             echo "купить нельзя, осталось: {$wait->y} лет, {$wait->m} мес., {$wait->d} дн.\n\n";
         } else {
@@ -335,7 +330,7 @@
     echo 'Готово';
     echo "\n";
 
-    # 4 — выполняется в отдельном файле include_demo.php (см. рамку ниже)
+    # 4 
     echo "# 4:\n";
 
     echo "</pre>";
@@ -398,7 +393,6 @@
     <?php
     echo "<pre>";
 
-    // break после каждого цвета — выводится только один
     $first = rand(1, 5);
     echo "первое число: $first → ";
     switch ($first):
@@ -420,7 +414,6 @@
     endswitch;
     echo "\n";
 
-    // без break — выполнение "проваливается" во все следующие case
     $second = rand(1, 5);
     echo "второе число: $second → ";
     switch ($second):
@@ -455,7 +448,7 @@
         0 => "0 — такого месяца не существует",
     };
 
-    echo "число: $month → $season\n";
+    echo "число: $month - $season\n";
 
     echo "</pre>";
     ?>
