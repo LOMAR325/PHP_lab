@@ -65,7 +65,7 @@ $_SESSION["subjects"] = [
     echo "</pre>";
     ?>
 
-    <p><a href="session_read.php">Перейти на другую страницу и прочитать сессию →</a></p>
+    <p><a href="task2_read.php">Перейти на другую страницу и прочитать сессию →</a></p>
 
 </body>
 

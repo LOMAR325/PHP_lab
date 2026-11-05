@@ -11,47 +11,54 @@
 
     <h2>Задание 1</h2>
 
-    <p>
-        Страница для эксперимента: <a href="cookies.php">cookies.php</a> —
-        открыть сессию, завершить её и смотреть куки в DevTools → Application → Cookies.
-    </p>
-
-    <?php
-    $screenshots = glob("screenshots/*.png");
-
-    foreach ($screenshots as $file) {
-        $name = basename($file, ".png");
-        echo "<p><b>$name</b><br>";
-        echo "<img src='screenshots/", rawurlencode(basename($file)), "' style='max-width: 100%; border: 1px solid #999;'></p>";
-    }
-    ?>
-
-    <p>
-        <b>Почему изменились куки.</b>
-        До открытия сессии кука PHPSESSID отсутствует. session_start() создаёт сессию на сервере
-        и отправляет браузеру заголовок Set-Cookie: PHPSESSID=&lt;id&gt; — браузер сохраняет куку
-        и дальше присылает её с каждым запросом, по ней сервер узнаёт «свою» сессию.
-        session_destroy() удаляет данные сессии только на сервере, кука в браузере остаётся;
-        чтобы удалить и её, нужно отправить setcookie() с тем же именем и временем в прошлом.
-    </p>
-
     <h2>Задание 2</h2>
 
     <p>
-        <a href="session_write.php">session_write.php</a> — открывает сессию, выводит её имя и id,
+        <a href="task2.php">task2.php</a> — открывает сессию, выводит её имя и id,
         пытается их изменить и записывает данные в $_SESSION.
         <br>
-        <a href="session_read.php">session_read.php</a> — другая страница, читает эти данные из $_SESSION.
+        <a href="task2_read.php">task2_read.php</a> — другая страница, читает эти данные из $_SESSION.
     </p>
 
     <h2>Задание 3</h2>
 
     <p>
-        Сайт с выбором языка: <a href="site/index.php">site/index.php</a>.
+        Сайт с выбором языка: <a href="task3/index.php">task3/index.php</a>.
         <br>
         Страницы index.php, sights.php, food.php связаны меню в хедере (header.php, подключается через require).
         Язык выбирается в select, форма отправляется методом POST, значение записывается в сессию,
         тексты берутся из lang.php.
+    </p>
+
+    <h2>Задание 4</h2>
+
+    <p>
+        <a href="task4.php">task4.php</a> — регистрация в два шага: шаг 1 отправляется методом GET,
+        шаг 2 — методом POST. После регистрации данные хранятся в сессии,
+        и при повторном открытии страница пишет «С возвращением, {логин}!».
+    </p>
+
+    <h2>Задание 5</h2>
+
+    <p>
+        <a href="task5.php">task5.php</a> — данные из $_SERVER записываются в куки и в сессию
+        и сравниваются с сохранёнными в прошлый раз.
+    </p>
+
+    <h2>Задание 6</h2>
+
+    <p>
+        <a href="task6.php">task6.php</a> — опрос «Утро студента» (POST, 9 типов полей),
+        ответы сохраняются в сессию.
+        <br>
+        <a href="task6_results.php">task6_results.php</a> — результаты опроса с кнопкой «Удалить».
+    </p>
+
+    <h2>Задание 7</h2>
+
+    <p>
+        <a href="task7.php">task7.php</a> — форма фильтра книг (GET),
+        <a href="task7_results.php">task7_results.php</a> — выбранные параметры и найденные книги.
     </p>
 
 </body>

@@ -1,6 +1,4 @@
 <?php
-// Задание 1: вся работа с сессией — до любого вывода,
-// потому что session_start() и setcookie() отправляют заголовки
 $action = $_GET["action"] ?? "";
 $message = "session_start() не вызывался";
 
@@ -31,14 +29,13 @@ if ($action === "start") {
 
 <body>
     <h1>Задание 1 — куки и сессия</h1>
-    <p><a href="lab9.php">← к лабораторной</a></p>
+    <p><a href="lab9.php"> к лабораторной</a></p>
     <hr>
-
     <p>
-        <a href="cookies.php?action=start">Открыть сессию</a> |
-        <a href="cookies.php?action=destroy">Завершить сессию (только session_destroy)</a> |
-        <a href="cookies.php?action=delete_cookie">Завершить сессию и удалить куку</a> |
-        <a href="cookies.php">Обновить без действий</a>
+        <a href="task1.php?action=start">Открыть сессию</a> |
+        <a href="task1.php?action=destroy">Завершить сессию (только session_destroy)</a> |
+        <a href="task1.php?action=delete_cookie">Завершить сессию и удалить куку</a> |
+        <a href="task1.php">Обновить без действий</a>
     </p>
 
     <?php

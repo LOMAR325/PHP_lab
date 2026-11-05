@@ -28,13 +28,13 @@ session_start();
             echo "  ", $i + 1, ". $subject\n";
         }
     } else {
-        echo "в сессии нет данных — сначала откройте session_write.php\n";
+        echo "в сессии нет данных — сначала откройте task2.php\n";
     }
 
     echo "</pre>";
     ?>
 
-    <p><a href="session_write.php">← Вернуться и перезаписать данные</a></p>
+    <p><a href="task2.php">← Вернуться и перезаписать данные</a></p>
 
 </body>
 
