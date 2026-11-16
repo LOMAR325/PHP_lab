@@ -40,14 +40,13 @@ if ($action === "start") {
 
     <?php
     echo "<pre>";
-
     echo "действие:        ", $action === "" ? "нет" : $action, "\n";
     echo "результат:       $message\n";
     echo "имя сессии:      ", session_name(), "\n\n";
-
+    
     echo "куки, которые браузер прислал в этом запросе (\$_COOKIE):\n";
     print_r($_COOKIE);
-
+    
     echo "</pre>";
     ?>
 

@@ -1,8 +1,6 @@
 <?php
-// Задание 5: данные о сервере из $_SERVER → в куки и в сессию + сравнение с сохранёнными
 session_start();
 
-// текущие значения; ?? — на случай, если сервер какой-то ключ не заполнил
 $current = [
     "host" => $_SERVER["SERVER_NAME"] ?? "нет данных",
     "ip" => $_SERVER["SERVER_ADDR"] ?? "нет данных",
@@ -11,16 +9,14 @@ $current = [
     "script" => $_SERVER["SCRIPT_NAME"] ?? "нет данных",
 ];
 
-// сначала читаем то, что сохранили в прошлый раз, — потом перезапишем
 $fromCookie = [];
 foreach ($current as $key => $value) {
     $fromCookie[$key] = $_COOKIE["server_" . $key] ?? null;
 }
 $fromSession = $_SESSION["server"] ?? [];
 
-// записываем текущие значения
 foreach ($current as $key => $value) {
-    setcookie("server_" . $key, $value, time() + 60 * 60 * 24);   // кука живёт сутки
+    setcookie("server_" . $key, $value, time() + 60 * 60 * 24);  
 }
 $_SESSION["server"] = $current;
 
@@ -32,7 +28,6 @@ $labels = [
     "script" => "имя скрипта",
 ];
 
-// сравнение: что выводить в ячейке
 function compare(?string $saved, string $now): string
 {
     if ($saved === null) {

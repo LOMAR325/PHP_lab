@@ -1,17 +1,14 @@
 <?php
-// Задание 4: двухэтапная регистрация. Шаг 1 — GET, шаг 2 — POST.
 session_start();
 
 $errors = [];
 
-// выход — чтобы можно было пройти регистрацию заново
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["logout"])) {
     unset($_SESSION["user"]);
     header("Location: task4.php");
     exit;
 }
 
-// шаг 2 отправлен
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
     $login = trim($_POST["login"]);
     $password = $_POST["password"] ?? "";
@@ -34,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
             "phone" => $_POST["phone"],
             "email" => $_POST["email"],
             "login" => $login,
-            "password" => password_hash($password, PASSWORD_DEFAULT),   // пароль храним только в виде хеша
+            "password" => password_hash($password, PASSWORD_DEFAULT),  
         ];
         session_regenerate_id(true);
         header("Location: task4.php");
@@ -42,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
     }
 }
 
-// данные шага 1: пришли в $_GET (после шага 1) или в $_POST (если на шаге 2 были ошибки)
 $step1 = $_SERVER["REQUEST_METHOD"] === "POST" ? $_POST : $_GET;
 $name = trim($step1["name"] ?? "");
 
@@ -54,7 +50,6 @@ if (isset($_SESSION["user"])) {
     $view = "step1";
 }
 
-// htmlspecialchars — для всего, что ввёл пользователь и что выводится в HTML
 function e(string $text): string
 {
     return htmlspecialchars($text);
@@ -107,7 +102,6 @@ function e(string $text): string
         <?php endforeach; ?>
 
         <form method="post" action="task4.php">
-            <!-- данные шага 1 едут дальше в скрытых полях -->
             <input type="hidden" name="name" value="<?= e($name) ?>">
             <input type="hidden" name="birth" value="<?= e($step1["birth"] ?? "") ?>">
             <input type="hidden" name="phone" value="<?= e($step1["phone"] ?? "") ?>">

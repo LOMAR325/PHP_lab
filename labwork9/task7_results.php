@@ -1,9 +1,8 @@
 <?php
-// Задание 7, вторая страница: всё, что выбрали в форме, лежит в $_GET
 $query = trim($_GET["query"] ?? "");
 $genre = $_GET["genre"] ?? "";
 $format = $_GET["format"] ?? "";
-$langs = (array) ($_GET["lang"] ?? []);   // checkbox с name="lang[]" — массив
+$langs = (array) ($_GET["lang"] ?? []);   
 $yearFrom = (int) ($_GET["year_from"] ?? 0);
 
 $books = [
@@ -17,7 +16,6 @@ $books = [
     ["title" => "Мастер и Маргарита", "author" => "М. Булгаков", "genre" => "классика", "format" => "бумажная", "lang" => "русский", "year" => 1967],
 ];
 
-// фильтрация: книга остаётся, если подходит под КАЖДЫЙ выбранный параметр
 $found = array_filter($books, function ($book) use ($query, $genre, $format, $langs, $yearFrom) {
     if ($query !== "" && mb_stripos($book["title"] . " " . $book["author"], $query) === false) {
         return false;
@@ -37,7 +35,6 @@ $found = array_filter($books, function ($book) use ($query, $genre, $format, $la
     return true;
 });
 
-// выбранные параметры для красивого вывода: пустое значение → «не важно»
 $chosen = [
     "Название или автор" => $query,
     "Жанр" => $genre,

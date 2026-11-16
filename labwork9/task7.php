@@ -16,7 +16,6 @@
     <p><a href="lab9.php">к лабораторной</a></p>
     <hr>
 
-    <!-- method="get" — параметры уйдут в адрес; action — на какую страницу -->
     <form method="get" action="task7_results.php">
 
         <p><span class="label">Название или автор (text)</span>

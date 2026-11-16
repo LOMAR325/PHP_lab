@@ -1,15 +1,12 @@
 <?php
-// Задание 2, страница 1: открываем сессию и записываем в неё данные
 session_start();
 
 $oldName = session_name();
 $oldId = session_id();
-
-// пробуем изменить имя и id, когда сессия уже открыта — PHP не даст
 $renameResult = @session_name("MYSESSION");
 $changeIdResult = @session_id("vlad123");
 
-// правильный способ сменить id открытой сессии
+
 session_regenerate_id(true);
 $newId = session_id();
 
@@ -34,7 +31,7 @@ $_SESSION["subjects"] = [
 
 <body>
     <h1>Задание 2 — запись в сессию</h1>
-    <p><a href="lab9.php">← к лабораторной</a></p>
+    <p><a href="lab9.php"> к лабораторной</a></p>
     <hr>
 
     <h2>Имя и идентификатор сессии</h2>
@@ -65,7 +62,7 @@ $_SESSION["subjects"] = [
     echo "</pre>";
     ?>
 
-    <p><a href="task2_read.php">Перейти на другую страницу и прочитать сессию →</a></p>
+    <p><a href="task2_read.php">Перейти на другую страницу и прочитать сессию </a></p>
 
 </body>
 

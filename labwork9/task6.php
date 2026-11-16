@@ -1,8 +1,7 @@
 <?php
-// Задание 6: опрос «Утро студента», данные — методом POST, результаты — в сессию
 session_start();
 
-const SURVEY_ID = "survey_morning";   // идентификатор опроса = ключ в $_SESSION
+const SURVEY_ID = "survey_morning";   
 
 $saved = false;
 
@@ -12,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["survey_id"] ?? "") === SUR
         "age" => (int) ($_POST["age"] ?? 0),
         "wake_up" => $_POST["wake_up"] ?? "",
         "drink" => $_POST["drink"] ?? "",
-        "breakfast" => $_POST["breakfast"] ?? [],   // checkbox с name="breakfast[]" — массив
+        "breakfast" => $_POST["breakfast"] ?? [],  
         "transport" => $_POST["transport"] ?? "",
         "mood" => (int) ($_POST["mood"] ?? 5),
         "colour" => $_POST["colour"] ?? "#000000",
@@ -21,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["survey_id"] ?? "") === SUR
 
     $results = $_SESSION[SURVEY_ID] ?? [];
 
-    // номера ответов начинаются с 1, как в примере из задания
     $nextNumber = count($results) === 0 ? 1 : max(array_keys($results)) + 1;
     $results[$nextNumber] = $answer;
 

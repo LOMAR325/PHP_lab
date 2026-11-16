@@ -1,5 +1,4 @@
 <?php
-// Задание 6, вторая страница: результаты опроса + удаление ответа
 session_start();
 
 const SURVEY_ID = "survey_morning";
