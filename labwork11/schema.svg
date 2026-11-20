@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500" font-family="Menlo, Consolas, monospace" font-size="13">
+    <title>ER-диаграмма базы данных library</title>
+
+    <rect width="700" height="500" fill="#ffffff" />
+
+    <!-- ===== author ===== -->
+    <rect x="20" y="20" width="230" height="102" fill="#fff" stroke="#333" />
+    <rect x="20" y="20" width="230" height="30" fill="#3a5f8a" stroke="#333" />
+    <text x="135" y="40" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">author</text>
+    <line x1="20" y1="74" x2="250" y2="74" stroke="#ccc" />
+    <line x1="20" y1="98" x2="250" y2="98" stroke="#ccc" />
+    <text x="30" y="67" fill="#3a5f8a" font-weight="bold">PK</text>
+    <text x="62" y="67" font-weight="bold" text-decoration="underline">id</text>
+    <text x="240" y="67" fill="#666" text-anchor="end">INT</text>
+    <text x="62" y="91">name</text>
+    <text x="240" y="91" fill="#666" text-anchor="end">VARCHAR(100)</text>
+    <text x="62" y="115">country</text>
+    <text x="240" y="115" fill="#666" text-anchor="end">VARCHAR(50)</text>
+
+    <!-- ===== genre ===== -->
+    <rect x="20" y="190" width="230" height="78" fill="#fff" stroke="#333" />
+    <rect x="20" y="190" width="230" height="30" fill="#3a5f8a" stroke="#333" />
+    <text x="135" y="210" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">genre</text>
+    <line x1="20" y1="244" x2="250" y2="244" stroke="#ccc" />
+    <text x="30" y="237" fill="#3a5f8a" font-weight="bold">PK</text>
+    <text x="62" y="237" font-weight="bold" text-decoration="underline">id</text>
+    <text x="240" y="237" fill="#666" text-anchor="end">INT</text>
+    <text x="30" y="261" fill="#8a5a3a" font-weight="bold">UQ</text>
+    <text x="62" y="261">title</text>
+    <text x="240" y="261" fill="#666" text-anchor="end">VARCHAR(50)</text>
+
+    <!-- ===== book ===== -->
+    <rect x="410" y="40" width="280" height="150" fill="#fff" stroke="#333" />
+    <rect x="410" y="40" width="280" height="30" fill="#3a5f8a" stroke="#333" />
+    <text x="550" y="60" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">book</text>
+    <line x1="410" y1="94" x2="690" y2="94" stroke="#ccc" />
+    <line x1="410" y1="118" x2="690" y2="118" stroke="#ccc" />
+    <line x1="410" y1="142" x2="690" y2="142" stroke="#ccc" />
+    <line x1="410" y1="166" x2="690" y2="166" stroke="#ccc" />
+    <text x="420" y="87" fill="#3a5f8a" font-weight="bold">PK</text>
+    <text x="452" y="87" font-weight="bold" text-decoration="underline">id</text>
+    <text x="680" y="87" fill="#666" text-anchor="end">INT</text>
+    <text x="452" y="111">title</text>
+    <text x="680" y="111" fill="#666" text-anchor="end">VARCHAR(200)</text>
+    <text x="452" y="135">year</text>
+    <text x="680" y="135" fill="#666" text-anchor="end">SMALLINT</text>
+    <text x="420" y="159" fill="#2f7d4a" font-weight="bold">FK</text>
+    <text x="452" y="159">author_id</text>
+    <text x="680" y="159" fill="#666" text-anchor="end">INT</text>
+    <text x="420" y="183" fill="#2f7d4a" font-weight="bold">FK</text>
+    <text x="452" y="183">genre_id</text>
+    <text x="680" y="183" fill="#666" text-anchor="end">INT</text>
+
+    <!-- ===== user ===== -->
+    <rect x="410" y="240" width="280" height="174" fill="#fff" stroke="#333" />
+    <rect x="410" y="240" width="280" height="30" fill="#3a5f8a" stroke="#333" />
+    <text x="550" y="260" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">user</text>
+    <line x1="410" y1="294" x2="690" y2="294" stroke="#ccc" />
+    <line x1="410" y1="318" x2="690" y2="318" stroke="#ccc" />
+    <line x1="410" y1="342" x2="690" y2="342" stroke="#ccc" />
+    <line x1="410" y1="366" x2="690" y2="366" stroke="#ccc" />
+    <line x1="410" y1="390" x2="690" y2="390" stroke="#ccc" />
+    <text x="420" y="287" fill="#3a5f8a" font-weight="bold">PK</text>
+    <text x="452" y="287" font-weight="bold" text-decoration="underline">id</text>
+    <text x="680" y="287" fill="#666" text-anchor="end">INT</text>
+    <text x="452" y="311">login</text>
+    <text x="680" y="311" fill="#666" text-anchor="end">VARCHAR(50)</text>
+    <text x="420" y="335" fill="#8a5a3a" font-weight="bold">UQ</text>
+    <text x="452" y="335">email</text>
+    <text x="680" y="335" fill="#666" text-anchor="end">VARCHAR(100)</text>
+    <text x="452" y="359">password_hash</text>
+    <text x="680" y="359" fill="#666" text-anchor="end">VARCHAR(255)</text>
+    <text x="452" y="383">salt</text>
+    <text x="680" y="383" fill="#666" text-anchor="end">VARCHAR(64)</text>
+    <text x="452" y="407">created_at</text>
+    <text x="680" y="407" fill="#666" text-anchor="end">DATETIME</text>
+
+    <!-- ===== связь author.id → book.author_id: один автор — много книг ===== -->
+    <path d="M250 62 H345 V154 H410" fill="none" stroke="#333" stroke-width="1.5" />
+    <line x1="258" y1="55" x2="258" y2="69" stroke="#333" stroke-width="1.5" />
+    <line x1="264" y1="55" x2="264" y2="69" stroke="#333" stroke-width="1.5" />
+    <line x1="394" y1="154" x2="410" y2="146" stroke="#333" stroke-width="1.5" />
+    <line x1="394" y1="154" x2="410" y2="162" stroke="#333" stroke-width="1.5" />
+    <line x1="388" y1="147" x2="388" y2="161" stroke="#333" stroke-width="1.5" />
+    <text x="352" y="105" fill="#555" font-family="Arial, sans-serif" font-size="12">написал</text>
+
+    <!-- ===== связь genre.id → book.genre_id: один жанр — много книг ===== -->
+    <path d="M250 232 H372 V178 H410" fill="none" stroke="#333" stroke-width="1.5" />
+    <line x1="258" y1="225" x2="258" y2="239" stroke="#333" stroke-width="1.5" />
+    <line x1="264" y1="225" x2="264" y2="239" stroke="#333" stroke-width="1.5" />
+    <line x1="394" y1="178" x2="410" y2="170" stroke="#333" stroke-width="1.5" />
+    <line x1="394" y1="178" x2="410" y2="186" stroke="#333" stroke-width="1.5" />
+    <line x1="388" y1="171" x2="388" y2="185" stroke="#333" stroke-width="1.5" />
+    <text x="280" y="226" fill="#555" font-family="Arial, sans-serif" font-size="12">относится к</text>
+
+    <!-- ===== легенда ===== -->
+    <g font-family="Arial, sans-serif" font-size="12" fill="#333">
+        <text x="20" y="320" font-weight="bold">Обозначения</text>
+        <text x="20" y="342"><tspan fill="#3a5f8a" font-weight="bold">PK</tspan> — первичный ключ</text>
+        <text x="20" y="362"><tspan fill="#2f7d4a" font-weight="bold">FK</tspan> — внешний ключ</text>
+        <text x="20" y="382"><tspan fill="#8a5a3a" font-weight="bold">UQ</tspan> — уникальное значение</text>
+
+        <line x1="20" y1="404" x2="70" y2="404" stroke="#333" stroke-width="1.5" />
+        <line x1="28" y1="397" x2="28" y2="411" stroke="#333" stroke-width="1.5" />
+        <line x1="34" y1="397" x2="34" y2="411" stroke="#333" stroke-width="1.5" />
+        <text x="80" y="408">ровно один</text>
+
+        <line x1="20" y1="428" x2="70" y2="428" stroke="#333" stroke-width="1.5" />
+        <line x1="54" y1="428" x2="70" y2="420" stroke="#333" stroke-width="1.5" />
+        <line x1="54" y1="428" x2="70" y2="436" stroke="#333" stroke-width="1.5" />
+        <line x1="48" y1="421" x2="48" y2="435" stroke="#333" stroke-width="1.5" />
+        <text x="80" y="432">один или много</text>
+
+        <text x="20" y="462">Связи «один-ко-многим»: у автора много книг, в жанре много книг.</text>
+        <text x="20" y="482">Таблица user (задание 4) хранит пользователей сайта и с книгами не связана.</text>
+    </g>
+</svg>

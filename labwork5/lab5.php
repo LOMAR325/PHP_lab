@@ -125,7 +125,7 @@
     echo "Шалаш:  ", var_export(isPalindrome("Шалаш"), true), "\n";
     echo "привет: ", var_export(isPalindrome("привет"), true), "\n\n";
 
-    echo "для сравнения strrev(\"дед\") = ", strrev("дед"), "  ← байты перевёрнуты, буквы сломаны\n";
+    echo "для сравнения strrev(\"дед\") = ", strrev("дед"), " — байты перевёрнуты, буквы сломаны\n";
 
     echo "</pre>";
     ?>
